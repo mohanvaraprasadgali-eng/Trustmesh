@@ -1,0 +1,30 @@
+{
+  "network": "mst_testnet",
+  "chainId": 91562037,
+  "deployer": "0xA58c3A80A4835d1Dd17d9557c69F5E08B783902e",
+  "deployedAt": "2026-09-29T08:14:52.562Z",
+  "contracts": {
+    "AgentRegistry": "0xB73E9f50150CDB94c06d198512196F9B6f4145Ca",
+    "ReputationRegistry": "0x900496CE8b48f3EdDE1Cdc55f0979b1399454932",
+    "TaskEscrow": "0x295dc89506fc88d587d0168D07C5D479492400D2"
+  },
+  "transactions": {
+    "AgentRegistry": "0x32dc087fb0aed0f79afe328703fb9d390e040880cbbf2a1dfdb8f8e8eaa73b26",
+    "ReputationRegistry": "0x9b2b790916a61f2d5bf6dabce2e54f4e297c92534f6149c66e0aabdb35c5ee0e",
+    "TaskEscrow": "0x5a5e607ebc000da6bef09e602c949c14202035992bc8d1c14069217430a96d81"
+  },
+  "details": {
+    "AgentRegistry": {
+      "address": "0xB73E9f50150CDB94c06d198512196F9B6f4145Ca",
+      "txHash": "0x32dc087fb0aed0f79afe328703fb9d390e040880cbbf2a1dfdb8f8e8eaa73b26"
+    },
+    "ReputationRegistry": {
+      "address": "0x900496CE8b48f3EdDE1Cdc55f0979b1399454932",
+      "txHash": "0x9b2b790916a61f2d5bf6dabce2e54f4e297c92534f6149c66e0aabdb35c5ee0e"
+    },
+    "TaskEscrow": {
+      "address": "0x295dc89506fc88d587d0168D07C5D479492400D2",
+      "txHash": "0x5a5e607ebc000da6bef09e602c949c14202035992bc8d1c14069217430a96d81"
+    }
+  }
+}

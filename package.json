@@ -1,0 +1,20 @@
+{
+  "name": "trustmesh-contracts",
+  "version": "1.0.0",
+  "description": "TrustMesh Smart Contracts — MST Blockchain AI & Web3 Hackathon",
+  "scripts": {
+    "compile": "node scripts/compile.js",
+    "test": "node scripts/compile.js && hardhat test --no-compile",
+    "deploy:testnet": "node scripts/compile.js && hardhat run scripts/deploy.js --network mst_testnet --no-compile",
+    "deploy:local": "node scripts/compile.js && hardhat run scripts/deploy.js --network hardhat --no-compile",
+    "node": "hardhat node"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.4.0"
+  }
+}

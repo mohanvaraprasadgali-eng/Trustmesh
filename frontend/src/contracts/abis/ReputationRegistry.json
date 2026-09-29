@@ -1,0 +1,394 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "score",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "AgentFlaggedUntrusted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      },
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "taskId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "scoreBefore",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "scoreAfter",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "success",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "ReputationUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "FAILURE_PENALTY",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "INITIAL_REPUTATION",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_REPUTATION",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SUCCESS_BONUS",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "UNTRUSTED_THRESHOLD",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      }
+    ],
+    "name": "getHistory",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "taskId",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scoreBefore",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scoreAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "success",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timestamp",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ReputationRegistry.ReputationEvent[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getHistoryAt",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "taskId",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scoreBefore",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scoreAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "success",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timestamp",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ReputationRegistry.ReputationEvent",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      }
+    ],
+    "name": "getReputation",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "agentId",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "currentScore",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalTasksCompleted",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalTasksVerified",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isUntrusted",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "initialized",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct ReputationRegistry.AgentReputation",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      }
+    ],
+    "name": "getScore",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      }
+    ],
+    "name": "historyLength",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      }
+    ],
+    "name": "initializeAgent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      }
+    ],
+    "name": "isUntrusted",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "agentId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "taskId",
+        "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "name": "recordTaskResult",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
